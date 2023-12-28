@@ -1,0 +1,353 @@
+* {
+    box-sizing: border-box;
+    }
+    
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+    
+    body {
+    line-height: 1;
+    background-color: var(--sec-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--main-color);
+    
+    line-height: 1.5;
+    }
+    
+    ol, ul {
+    list-style: none;
+    }
+    
+    blockquote, q {
+    quotes: none;
+    }
+    
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+    content: '';
+    content: none;
+    }
+    
+    table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+    
+    a {
+    color:inherit;
+    text-decoration: none;
+    }
+    
+    img {
+    width: 100%;
+    display: inline-block;
+    }
+    
+    /* END RESET*/
+
+
+
+
+  /* FUENTES TIPOGRÁFICAS */
+
+    /* Importa ambas tipografías desde Google Fonts en una sola URL */
+
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300&family=Darker+Grotesque:wght@400;500;700&family=IBM+Plex+Mono:wght@100&family=Kalnia:wght@600&family=Raleway:wght@900&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300&family=Darker+Grotesque:wght@400;500;700&family=IBM+Plex+Mono:wght@100&family=Kalnia:wght@600&family=Raleway:wght@900&display=swap');
+
+
+  /* VARIABLES */
+
+  :root {
+
+    /* Colores */
+    --color-black: #000000;
+    --color-white:  #FFFFFF; 
+    --color-orange:  #FEAC59;
+
+    /* Fuentes */                 
+    --font-family-h1: 'Kalnia', serif;
+    --font-family-h2: 'Kalnia', serif;
+    --font-family-h3: 'Kalnia', serif;
+    --font-family-p: 'DM Sans', sans-serif;
+
+    /* Tamaños fuentes */
+    --h1-font-size: 112px;
+    --h2-font-size: 94px;
+    --h3-font-size: 60px;
+    --h4-font-size: 35px;
+    --p-font-size: 22.5px;
+    --nav-font-size: 25.8px;
+    --btn-font-size: 16px;
+
+
+    /* Estilos H */
+    --h1-letter-spacing: -4px;
+    --h1-font-weight: 500;
+    --h1-line-height: 1;
+    --h2-font-weight: 500;
+    --h2-letter-spacing: -3px;
+    --h2-line-height: .9;
+    --h3-font-weight: 500;
+    --h3-letter-spacing: 0px;
+    --h3-line-height: .9;
+    --p-font-weight: 100;
+
+
+    /* Estilos para botones */
+    --btn-font-family: 'DM Sans', sans-serif;
+    --btn-text-decoration: none;
+    --btn-padding: 1.1rem 2rem;
+    --btn-border-radius: 2rem;
+    --btn-font-weight: 100;
+    --btn-border: 1px solid #000000;
+    --btn-background-white: #FFFFFF; 
+    --btn-background-black: #000000;
+    --btn-background-orange: #FEAC59;
+
+    --btn-transition: .2s;
+
+    /* Estilos para párrafos */
+    --p-color: var(--color-white);
+    --p-color: var(--color-black);
+    --p-color: var(--color-orange);
+
+    /* Estilos para barra de navegación */
+    --nav-font-size: 25.8px;
+    --nav-font-family: 'Darker Grotesque', sans-serif;
+    --nav-color: var(--color-white);
+
+  }
+
+/* Estilos generales que queremos que se apliquen por defecto en la web y evitarnos repetirlos muchas veces */
+
+body {
+    background-color: var(--color-white);
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+
+h1 {
+    font-family: var(--font-family-h1);
+    font-size: var(--h1-font-size);
+    letter-spacing: var(--h1-letter-spacing);
+    font-weight: var(--h1-font-weight);
+    line-height: var(--h1-line-height);
+}
+
+h2 {
+    font-family: var(--font-family-h2);
+    font-size: var(--h2-font-size);
+    letter-spacing: var(--h2-letter-spacing);
+    font-weight: var(--h2-font-weight);
+    line-height: var(--h2-line-height);
+}
+
+h3 {
+    font-family: var(--font-family-h3);
+    font-size: var(--h3-font-size);
+    letter-spacing: var(--h3-letter-spacing);
+    font-weight: var(--h3-font-weight);
+    line-height: var(--h3-line-height);
+}
+
+p {
+    font-family: var(--font-family-p);
+    font-weight: 600;
+    font-size: 22.5px;
+}
+
+a {
+    font-size: var(--btn-font-size);
+    font-family: var(--btn-font-family);
+    padding: var(--btn-padding);
+    border-radius: var(--btn-border-radius); 
+    border: 1px solid var(--color-orange);
+    color: var(--color-white);
+    text-decoration: none;
+    transition: var(--btn-transition);
+    font-weight: var(--btn-font-weight);
+}
+
+
+
+
+
+/* EMPEZAMOS CON LOS BLOQUES DE LA WEB */
+
+/*                         Página HOME                         */
+
+
+/* Barra de navegación */
+
+.nav-bar {  
+    min-width: 100vw;
+    padding: 1.8rem;
+        
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    background-color: var(--color-black);
+    
+    z-index: 1000; /* Ponemos un nº alto para indicar la posición del eje z y que siempre quede por encima la barra de navegación */
+    position: fixed; /* Para que la barra de navegación se queda fija cuando hacemos scroll*/
+    top: 0;          /* Posicionamos en la parte superior la navbar */
+}
+    
+.nav-bar a {  
+    margin-right: 2rem;
+}
+    
+.nav-bar .bar_btn {   /* Botón largo */
+    margin-right: 1.5rem;
+}
+
+.nav-bar .nav-bar_links .menu_btn { /* Botón menú desplegable */
+    border-radius: 5rem;
+    padding: 1rem;
+    background-color: var(--btn-background-orange);
+}
+    
+.nav-bar .bar_btn:hover { /* Hover botón menú desplegable */
+    color: var(--color-black);
+    background-color: var(--color-orange);
+}
+
+
+  
+
+
+/* Texto principal del Inicio/Home (lo 1º que vemos) */
+
+.home-main-text {
+    text-align: center;
+    padding: 8rem;
+}
+
+.home-main-text h1 {
+    margin: 10rem;  
+}
+
+  /* VERSIÓN MÓVIL */
+
+  @media (min-width:250px) and (max-width: 1219px) {
+    
+    .home-main-text {
+        text-align: center;
+        padding: 3rem;
+    }
+    
+    .home-main-text h1 {
+        margin: 10rem 1rem 5rem 1rem;  
+        font-size: 70px;
+    }
+  }
+
+
+
+/* Carrousel de proyectos - Home */
+
+/* Carrousel */
+.container-carousel-home-1 {
+    background-color: var(--color-black);
+    height: 500px;
+    width: 100%;
+    overflow-x: auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
+.container-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+  
+    transition: transform 0.5s ease-in-out;
+}
+  
+.container-inner_img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 1rem;
+    min-width: 25%;
+}
+
+.container-carousel-home-1 .container-inner_img img {
+    width: 100%;
+    border-radius: 40px;
+}
+  
+/* Botón separado del carousel */
+.container-inner2{
+    margin: 6rem 2rem 15rem 2rem;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-inner2 .container-inner_btn a:hover {
+    background-color: var(--color-orange);
+    color: var(--color-black);
+}
+
+  
+/* VERSIÓN MÓVIL */
+  
+@media (min-width:320px) and (max-width:1024px) {
+
+    .container-inner_img p {
+        width: 90%;
+    }
+}
+
+
+
+  /* Texto alineado a la derecha */
+
+.home-text-right {
+    text-align: start;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin: 0 5rem 0 55rem;
+}
+
+
+  /* VERSIÓN MÓVIL */
+
