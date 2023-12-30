@@ -1,0 +1,4 @@
+{
+    "figma.autocompleteBlocks": false,
+    "javascript.suggest.includeAutomaticOptionalChainCompletions": true
+}
