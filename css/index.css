@@ -221,7 +221,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 
     background-color: var(--color-black);
     
@@ -252,43 +252,75 @@ a {
 .nav-bar .nav-bar_links .menu_btn { /* Botón menú desplegable */
     display: none;
 }
+#menu-desplegable .menu-list{
+    display: none;
+}
 
 
 
   /* VERSIÓN MÓVIL   */
 
-  @media (min-width:250px) and (max-width: 1219px) {
+  @media (min-width:200px) and (max-width: 1219px) {
  
     .nav-bar {  
-        min-width: 100vw;
         padding: 1.8rem;
-            
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     
         background-color: var(--color-black);
         
         z-index: 1000; /* Ponemos un nº alto para indicar la posición del eje z y que siempre quede por encima la barra de navegación */
         position: fixed; /* Para que la barra de navegación se queda fija cuando hacemos scroll*/
         top: 0;          /* Posicionamos en la parte superior la navbar */
+    
     }
-        
-    .nav-bar .nav-bar_links .none {
+    .nav-bar_links  {
+        display: flex;
+        flex-direction: row;
+    }
+    .nav-bar_links .none   {
         display: none;
     }
-    
-    .nav-bar .bar_btn {   /* Botón largo */
+
+    .nav-bar_links .bar_btn {   /* Botón largo */
         margin-right: 0rem;
+        display: flex;
+        flex-direction: row;
     }
 
-
-    .nav-bar .nav-bar_links .menu_btn { /* Botón menú desplegable */
-        display: inline; /* Poner el contrario de display: none; */
+    .nav-bar_links .menu_btn { /* Botón menú desplegable */
+        display: inline; /* Lo mostramos para que se vea el icono */
         margin-right: 0;
         padding: 0.5rem;
     }
+
+    /* Menu desplegable */
+
+    #menu-desplegable .menu-list {
+        width: 50vw;
+        height: 90vh;
+
+        background-color: var(--color-orange);
+        color: var(--color-black);
+
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        position: fixed;
+        left: 40rem;
+        top: 0rem;
+    }
+
+    /* Active */
+
+    #menu-desplegable.active {
+        display: block;
+    }
+
   }
 
 
@@ -620,10 +652,6 @@ a {
         }
     }    
 
-
-
-
-
   /* VERSIÓN MÓVIL */
 
   @media (min-width:200px) and (max-width:1024px) {
@@ -640,45 +668,81 @@ a {
 
 /* GRID Galería de imágenes - final HOME */
 
-                  /* HACER GRID GALERÍA DE IMÁGENES + RESPONSIVE */
-.container-galery {
-    max-width: 100vw;
+.container-gallery {
+    max-width: 90vw;
+    margin: 5rem auto;
+    padding: 3rem;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    grid-auto-flow: dense;
-    gap: 1rem;
 }
 
-.container-galery_imgs {
-    margin: 10rem;
+.item {
+    padding: 1.3rem 1rem;
+}
+/* Colocamos los items de las img en la posición de las columnas para adaptarlo a la galería */
+.item:hover {
+    padding: 0.5rem;
+    transition: 0.4s;
 }
 
-.container-galery_imgs img{
-    width: 25%;
+.item1, .item6, .item8 {
+    grid-column: 1/2;
 }
+
+.item2, .item9 {
+    grid-column: 2/3;
+}
+
+.item3, .item5, .item10 {
+    grid-column: 3/4;
+}
+
+.item4 {
+    grid-column: 1/3;
+}
+
+.item7 {
+    grid-column: 2/4;
+}
+
 
   
-/* VERSIÓN MÓVIL */
-
+/* VERSIÓN MÓVIL Y TABLET */
 
   @media (min-width:200px) and (max-width:1024px) {
 
-    .container-galery {
-        max-width: 100vw;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-        grid-auto-flow: dense;
-        gap: 1rem;
+    .container-gallery {
+        max-width: 95vw;
+        margin: 5rem auto;
+        padding: 1rem;
+        grid-template-columns: repeat(2, 1fr);  /* Se ha reducido a 2 columnas en vez de 3 para adaptarlo a la pantalla movil y tablet */
+    }
+
+    .item {
+        padding: 0.8rem;
     }
     
-    .container-galery_imgs {
-        margin: 2rem;
+    .item:hover {
+        padding: 0.6rem;
+        transition: 0.4s;
+    }
+
+   /* Se han eliminado las img 3 y 10 para reducir la cantidad de img y no saturar y para cuadrar mejor la galería */
+    .item1, .item5, .item8 {
+        grid-column: span 1;
     }
     
-    .container-galery_imgs img{
-        width: 40%;
+    .item4, .item7 {
+        grid-column: span 2;
+    }
+    
+    .item2, .item6, .item9 {
+        grid-column: span 1;
+    }
+    
+    .item3, .item10 {
+        display: none;
     }
 }
 
@@ -724,16 +788,18 @@ a {
 
 /* VERSIÓN MÓVIL */
 
-@media (min-width:200px) and (max-width:1024px) {
+@media (min-width:200px) and (max-width:124px) {
 
     .container-info-home {
         grid-template-columns: 1fr;
         margin-top: 5rem;
+        gap: 3rem;
     }
 
     .container-info-home .container-info-home_blocks_row {
         margin: 2rem 1rem;
     }
+
 }
 
 
