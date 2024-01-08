@@ -73,11 +73,9 @@
 
   /* FUENTES TIPOGRÁFICAS */
 
-    /* Importa ambas tipografías desde Google Fonts en una sola URL */
+    /* Font "Anton" = Para títulos/subtítulos / Font "Space Grotesk" = Para párrafos */
 
-    /* Fuente Outfit */
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;500;600;800;900&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600&display=swap');
 
 
   /* VARIABLES */
@@ -90,13 +88,13 @@
     --color-orange:  #FE7122;
 
     /* Fuentes */                 
-    --font-family-h1: 'Outfit', sans-serif;
-    --font-family-h2: 'Outfit', sans-serif;
-    --font-family-h3: 'Outfit', sans-serif;
-    --font-family-h4: 'Outfit', sans-serif;
-    --font-family-p: 'Outfit', sans-serif;
-
-
+    --font-family-h1: 'Anton', sans-serif;
+    --font-family-h2: 'Anton', sans-serif;
+    --font-family-h3: 'Anton', sans-serif;
+    --font-family-h4: 'Space Grotesk', sans-serif;
+    --font-family-p:'Space Grotesk', sans-serif;
+    --font-family-btn: 'Space Grotesk', sans-serif;
+    --font-family-nav: 'Space Grotesk', sans-serif;
 
     /* Tamaños fuentes */
     --h1-font-size: 112px;
@@ -108,15 +106,9 @@
     --btn-font-size: 20px;
 
     /* Grosor de la fuente */
-    --h1-font-weight: 800;
-    --h2-font-weight: 600;
-    --h3-font-weight: 600;
-    --h4-font-weight: 500;
     --p-font-weight: 300;
 
-
     /* Estilos para botones */
-    --btn-font-family: 'Outfit', sans-serif;
     --btn-border-radius: 2rem;
     --btn-padding: 1.1rem 2rem;
     --btn-padding-hover: 1.3rem 2.5rem;
@@ -135,7 +127,6 @@
 
     /* Estilos para barra de navegación */
     --nav-font-size: 25.8px;
-    --nav-font-family: 'Outfit', sans-serif;
     --nav-color: var(--color-white);
 
     /* Responsive */
@@ -149,16 +140,12 @@
     --tablet-font-size-h2: 50px; 
     --tablet-font-size-h3: 40px; 
     --tablet-font-size-h4: 30px; 
-
   }
 
 /* Estilos generales que queremos que se apliquen por defecto en la web y evitarnos repetirlos muchas veces */
 
 body {
-    background-color: var(--color-white);
-    color: var(--color-white);
     background-color: var(--color-black);
-
     cursor: url('../assets/img/cursor.svg'), auto; 
                                 /*Aparecerá un icono como cursor. 
                                 PROBLEMA! Cuando paso por una img o link no aparece */
@@ -168,30 +155,25 @@ body {
 h1 {
     font-family: var(--font-family-h1);
     font-size: var(--h1-font-size);
-    font-weight: var(--h1-font-weight);
 }
 
 h2 {
     font-family: var(--font-family-h2);
     font-size: var(--h2-font-size);
-    font-weight: var(--h2-font-weight);
 }
 
 h3 {
     font-family: var(--font-family-h3);
     font-size: var(--h3-font-size);
-    font-weight: var(--h3-font-weight);
 }
 
 h4 {
     font-family: var(--font-family-h4);
     font-size: var(--h4-font-size);
-    font-weight: var(--h4-font-weight);
 }
 
 p {
     font-family: var(--font-family-p);
-    font-weight: var(--p-font-weight);
     font-size: var(--p-font-size);
 }
 
@@ -199,12 +181,10 @@ a {
     font-size: var(--btn-font-size);
     font-weight: var(--btn-font-weight);
     border-radius: var(--btn-border-radius); 
-    color: var(--color-white);
     text-decoration: none;
     transition: var(--btn-transition);
-    font-weight: var(--btn-font-weight);
+    font-family: var(--font-family-btn);
 }
-
 
 
 
@@ -219,6 +199,7 @@ a {
 .nav-bar {  
     min-width: 100vw;
     padding: 1.8rem;
+    color: var(--color-white);
         
     display: flex;
     flex-direction: row;
@@ -242,6 +223,7 @@ a {
 
 .nav-bar .nav-bar_links .a-nav:hover {
     color:  var(--color-orange);
+    padding: 1.1rem 3rem;
 }
 
 
@@ -336,6 +318,7 @@ a {
 .home-main-text .home-main-text_titulo h4 {
     font-size: 30px;
     font-weight: 300;
+    color: var(--color-white);
 }
 
 
@@ -509,6 +492,7 @@ a {
 .container-inner2 .container-inner_btn a {
     border: 1px solid var(--color-orange);
     padding: var(--btn-padding);
+    color: var(--color-white);
 }
 
 .container-inner2 .container-inner_btn a:hover {
@@ -551,6 +535,7 @@ a {
     flex-direction: wrap;
     padding: 5rem;
     margin: 8rem 0 0 25rem;
+    color: var(--color-orange);
 }
 
 
@@ -763,6 +748,7 @@ a {
     flex-direction: column;
     gap: 1rem;
     padding: 2rem;
+    color: var(--color-white);
 
     position: relative; /* Para poner hacer una animación de subrayado más abajo */
 }
@@ -823,7 +809,6 @@ a {
 
 
 
-
 /*          Página Proyectos       */
 
 /* Texto principal página Proyectos */
@@ -841,6 +826,9 @@ a {
     line-height: 7rem;
     color: var(--color-orange);
     font-size: 100px;
+}
+.container-projects-main .container-projects-main_title h4 {
+    color: var(--color-white);
 }
 
   /* VERSIÓN MÓVIL */
@@ -933,7 +921,7 @@ a {
 .nosotros-main-text {
     max-width: 100vw;
     text-align: start;
-    padding: 15rem 10rem;
+    padding: 15rem 10rem 12rem 10rem;
 }
 
 .nosotros-main-text .nosotros-main-text_titulo h1 {
@@ -944,7 +932,11 @@ a {
     color: var(--color-orange);
     font-size: 100px;
 }
+.nosotros-main-text .nosotros-main-text_titulo h4 {
+    color: var(--color-white);
+    margin: 5rem 0 5rem 0;
 
+}
 
 
   /* VERSIÓN MÓVIL */
@@ -968,6 +960,25 @@ a {
         color: var(--color-orange);
     } 
   }
+
+/* Intro "Nosotros" */
+
+.intro-nosotros {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    padding: 5rem 8rem 10rem 8rem;
+}
+.intro-nosotros h3{
+    color: var(--color-orange);
+    text-align: center;
+}
+.intro-nosotros p{
+    color: var(--color-white);
+    font-size: var(--p-font-size);
+}
 
 
 /* Presentación EQUIPO */
@@ -993,15 +1004,20 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 2rem;
 }
 
-.text-content h2,
+.text-content,
 .text-content p,
 .text-content h3 {
     margin: 0;
     margin-bottom: 10px;
     color: var(--color-orange);
+}
+
+.text-content h4 {
+    color: var(--color-white);
 }
 
 .text-content p {
@@ -1090,8 +1106,81 @@ a {
 
   /*          Página Servicios         */
 
+  /* Inicio de la página servicios */
 
-/* Carrousel imgs */
+  .main-nuestros-servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem;
+    margin: 5rem;
+    color: var(--color-orange);
+  }
+
+  .main-nuestros-servicios .main-nuestros-skills {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0.7rem;
+    margin-top: 3rem;
+  }
+
+  .main-nuestros-servicios .main-nuestros-skills a {
+    border: 1px solid var(--color-orange);
+    border-radius: var(--btn-border-radius);
+    padding: 0.3rem 2rem
+  }
+
+  /* Contenedor: Mini texto izquierda + boxes derecha */
+
+  .container-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    color: var(--color-orange);
+    gap: 2rem;
+  }
+
+  .container-text{
+    padding: 2rem;
+  }
+
+  .boxes  {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .boxes .box {
+    border: 1px solid var(--color-orange);
+    padding: 15rem 10rem;
+    border-radius: 2rem;
+    margin: 1rem;
+    transition: 0.3s;
+  }
+
+  .boxes .box:hover {
+    padding: 15rem 15rem;
+  }
+
+
+
+  /* Sección X */
+
+  
+
+
+
+
+
+
+
+
+
+
+
+/* Carrousel imgs 
   
 .slider--img {
     width: 100%;
@@ -1117,9 +1206,9 @@ a {
     width: 100vw;
     object-fit: cover;
 }
+*/
 
-
-/* Slider imgs con btn */
+/* Slider imgs con btn 
 
 .container-slider {
     display: flex;
@@ -1186,3 +1275,5 @@ a {
     margin-top: 2rem;
     font-size: 18px;
 }
+
+*/
