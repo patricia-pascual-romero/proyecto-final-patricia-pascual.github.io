@@ -1,17 +1,13 @@
 
 
-/* Barra de navegación (se repite en todas las páginas)
+/* Barra de navegación (se repite en todas las páginas)*/
 
-fetch('../components/navbar.html')
-then(response => response.text())
+fetch('/components/navbar.html')
+.then(response => response.text())
 .then(data => {
-    document.querySelector('.nav-bar').innerHTML = data;
+    document.querySelector('header').innerHTML = data;
 })
 .catch
-
-*/
-
-
 
 
 
@@ -149,3 +145,21 @@ let imagenes = [
 
 
     
+
+
+
+// SECCIÓN "QUE HACEMOS" DE LA PÁG SERVICIOS (Desplegable) 
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Variable local 
+    let desplegableItems = document.querySelectorAll('.desplegable-items');
+  
+    // Pasa sobre cada elemento 'desplegable-items' uno por uno (por eso se utiliza "forEach", para pasar por cada uno)
+    desplegableItems.forEach(function (item) {
+      
+      item.addEventListener('click', function () { // Agrega un event listener para el clic en cada elemento  
+        this.classList.toggle('active'); // Alterna la clase 'active' en el elemento clicado
+      });
+    });
+});

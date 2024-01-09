@@ -146,7 +146,7 @@
 
 body {
     background-color: var(--color-black);
-    cursor: url('../assets/img/cursor.svg'), auto; 
+    /*cursor: url('../assets/img/cursor.svg'), auto; 
                                 /*Aparecerá un icono como cursor. 
                                 PROBLEMA! Cuando paso por una img o link no aparece */
 }
@@ -215,6 +215,10 @@ a {
     
 .nav-bar .bar_btn {   /* Botón largo */
     margin-right: 2rem;
+}
+
+.nav-bar_logo .logo img {
+    width: 30%;
 }
 
 .nav-bar .nav-bar_links .a-nav {
@@ -1126,7 +1130,7 @@ a {
     margin-top: 3rem;
   }
 
-  .main-nuestros-servicios .main-nuestros-skills a {
+  .main-nuestros-servicios .main-nuestros-skills a { /* Cambiar a otra etiqueta, no a porque no es un enlace */
     border: 1px solid var(--color-orange);
     border-radius: var(--btn-border-radius);
     padding: 0.3rem 2rem
@@ -1166,15 +1170,157 @@ a {
 
 
 
-  /* Sección X */
+  /* Sección QUÉ HACEMOS */
 
+  .container-quehacemos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .container-quehacemos .container-quehacemos_text {
+    color: var(--color-orange);
+    padding: 5rem;
+  }
+
+  .container-quehacemos .container-quehacemos_text p {
+    padding: 2rem 0;
+  }
+
+
+  /* DESPLEGABLE */
+
+  .container-quehacemos {
+    padding: 3rem;
+    margin: 5rem 0;
+  }
   
+  .container-questions {
+    margin: 3rem;
+    width: 90%;
+  }
+  
+  .desplegable-items {
+    margin: 0.5rem 0 0 0;
+    cursor: pointer; /* Para indicar que es clickeable */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .desplegable-items .item {
+    display: none; /* Aún no está activo */
+    margin: 0.5rem 0 0.5rem 0; /* Espaciado entre preguntas y respuestas */
+  }
+
+  .desplegable-items.active .item {
+    display: block;
+  }
+
+  .desplegable-items .titulo-desplegable {
+    padding: 1rem;
+    border-radius: 3px; 
+    color:  var(--color-orange);
+    transition: color 0.3s ease-in-out; /* Añadida transición de color */
+  }
+
+  .desplegable-items:hover .titulo-desplegable {
+    color: var(--color-white);
+  }
+  
+  .desplegable-items:active .titulo-desplegable {
+    color: var(--color-white);
+    padding: 10px;
+    border-radius: 3px;
+    transition: none; /* Elimina la transición durante el clic activo */
+  }
+
+
+  .desplegable-items:active .titulo-desplegable {
+    color: var(--color-white);
+    padding: 10px;
+    border-radius: 3px; 
+    transition: 0.3s;
+  }
+
+  .desplegable-items p {
+    color: var(--color-orange);
+  }
+    
+  /* Iconos */
+
+  .toggle-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .minus-icon {
+    display: none;
+  }
+
+  .desplegable-items.active .plus-icon {
+    display: none;
+  }
+
+  .desplegable-items.active .minus-icon {
+    display: inline-block;
+  }
+
+  .icon {
+    margin: 0 0.7rem 0 0; /* Espaciado entre el ícono y el texto de la pregunta */
+  }
+
+
+  /* VERSIÓN MÓVIL 
+
+  @media (min-width:320px) and (max-width:1024px) {
+
+    .container-questions {
+      margin: 1.8rem;
+    }
+  
+    .container-questions h1 {
+      font-size: 80px;
+      line-height: 5rem;
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+  
+    /* Desplegable 
+  
+    .container-questions-faqs {
+      margin: 2rem;
+    }
+    .desplegable-items h4 {
+      font-size: 30px;
+      padding: 0rem;
+    }
+    .desplegable-items p {
+      font-size: 22px;
+    }
+  }
+  */
 
 
 
+  /*  Texto centrado  */
 
+  .container-center-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-orange);
+    margin: 5rem 3rem;
+  }
 
-
+  .container-center-text p{
+    margin: 2rem 0 0 0;
+  }
 
 
 
