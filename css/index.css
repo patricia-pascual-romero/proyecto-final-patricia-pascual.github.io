@@ -193,113 +193,128 @@ a {
 /*                   Página HOME                         */
 
 
-/* Barra de navegación */
+    /* NAVBAR RESPONSIVE */
 
-.nav-bar {  
-    min-width: 100vw;
-    padding: 1.8rem;
-    color: var(--color-white);
-        
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-
-    background-color: var(--color-black);
+    .menu1 { /* Menu normal de pantallas medianas/grandes */
+      min-width: 95vw;
+      padding: 3rem 2rem;
+      margin: auto;
+          
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: nowrap;
     
-    z-index: 1000; /* Ponemos un nº alto para indicar la posición del eje z y que siempre quede por encima la barra de navegación */
-    position: fixed; /* Para que la barra de navegación se queda fija cuando hacemos scroll*/
-    top: 0;          /* Posicionamos en la parte superior la navbar */
-}
-    
-.nav-bar .bar_btn {   /* Botón largo */
-    margin-right: 2rem;
-}
-
-.nav-bar_logo .logo img {
-    width: 30%;
-}
-
-.nav-bar .nav-bar_links .a-nav {
-    padding: var(--btn-padding);
-    transition: 0.3s ease-in-out;
-}
-
-.nav-bar .nav-bar_links .a-nav:hover {
-    color:  var(--color-orange);
-    padding: 1.1rem 3rem;
-}
-
-
-.nav-bar .bar_btn { /* Hover botón menú desplegable */
-    border: 1px solid var(--color-orange);
-    padding: var(--btn-padding);
-    color: var(--color-white);
-    transition: 0.3s ease-in-out;
-}
-.nav-bar .bar_btn:hover { /* Hover botón menú desplegable */
-    background-color: var(--color-orange);
-    color: var(--color-black);
-}
-
-.nav-bar .nav-bar_links .menu_btn { /* Botón menú desplegable */
-    display: none;
-    border: none;
-    background-color: transparent;
-}
-
-.popup-ov-menu .menu-list {
-    display: none;
-}
-
-
-  /* VERSIÓN MÓVIL   */
-
-  @media (min-width:200px) and (max-width: 1219px) {
- 
-    .nav-bar {  
-        padding: 1.8rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: nowrap;
-    
-        background-color: var(--color-black);
-        
-        z-index: 1000; /* Ponemos un nº alto para indicar la posición del eje z y que siempre quede por encima la barra de navegación */
-        position: fixed; /* Para que la barra de navegación se queda fija cuando hacemos scroll*/
-        top: 0;          /* Posicionamos en la parte superior la navbar */
-    
-    }
-    .nav-bar_links  {
-        display: flex;
-        flex-direction: row;
-    }
-    .nav-bar_links .none   {
-        display: none;
+      background-color: var(--color-black);
+      
+      z-index: 1000; /* Ponemos un nº alto para indicar la posición del eje z y que siempre quede por encima la barra de navegación */
+      position: fixed; /* Para que la barra de navegación se queda fija cuando hacemos scroll*/
+      top: 0;          /* Posicionamos en la parte superior la navbar */
     }
 
-    .nav-bar_links .bar_btn {   /* Botón largo */
-        margin-right: 0rem;
-        display: flex;
-        flex-direction: row;
+    .menu1_links { /* Contenedor links del menu */
+      gap: 2rem; 
+    }
+
+    .menu1_links_a {  /* Links del menu */
+      color: var(--color-white);
+      padding: var(--btn-padding);
+      transition: 0.3s ease-in-out;
+    }
+
+    .menu1_links_a:hover {
+      color:  var(--color-orange);
+      padding: 1.1rem 3rem;
+    }
+
+    .menu1_logo .logo img{  /* Logo del menu */
+      width: 30%;
+    }
+
+    .menu1_links .contact { /* Botón círculo "Contact" del menu */
+      border: 1px solid var(--color-orange);
+      padding: var(--btn-padding);
+      transition: 0.3s ease-in-out;
+    }
+
+    .menu1_links .contact:hover{
+      background-color: var(--color-orange);
+      color: var(--color-black);
+    }
+
+    .menu--ov.activeMenu {
+      display: flex;
+    }
+
+    /* Ocultamos el menú del formato móvil porque estamos en pantallas más grandes */
+    .menu1--mobile { 
+      display: flex;
+    }
+
+    .menu--ov {
+      display: flex;
     }
 
 
-    /* Contenedor menú desplegable */
 
-    .nav-bar .nav-bar_links .menu_btn { /* Botón menú desplegable */
-        display: inline;
-        border: none;
-        background-color: transparent;
-    }
-    
-    .popup-ov-menu .menu-list {
-        display: block;
-    }
-    
+    @media (min-width:250px) and (max-width:1155px) {
 
+    .menu1 { /* Ocultamos el menú de pantallas más grandes */
+      display: none;
+    }
+
+    .menu1--mobile { /* Activamos el menú para pantallas pequeñas+ Estilos */
+      min-height: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+
+      position: fixed;
+      top: 30px; 
+      left: 0;
+      right: 0;
+      z-index: 1000; /* Ponemos un nº alto para indicar la posición del eje z y que siempre quede por encima la barra de navegación */
+    }
+
+    .button--menu { /* Botón que nos permite abrir el menú desplegable */
+      background-color: transparent; /* Para que no se vea el fondo del button (función conectada con JS que hará que se pueda abrir el botón) */
+      border: none;
+    }
+
+    .menu--info { /* Contenedor links menu desplegable (responsive)*/
+      width: 135vw;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+
+      background-color: var(--color-orange);
+      color: var(--color-black);
+
+      transition: .8s;
+    }
+
+    .menu--info_mobile_close { /* Botón X para cerrar menú responsive */
+      font-size: 2.5rem;
+      position: absolute;
+      color: rgb(137, 137, 137);
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .menu1--mobile .logo img{ /* Tamaño logo */
+      width: 30%;
+    }
   }
+
+
+
+
 
 
 /* Texto principal del Inicio/Home (lo 1º que vemos) */
@@ -332,16 +347,16 @@ a {
   @media (min-width:200px) and (max-width: 800px) {
 
     .home-main-text {
-        padding: 8rem 5rem;
+        padding: 8rem 0.2rem 8rem 3rem;
     }
     
     .home-main-text .home-main-text_titulo h1 {
-        font-size: var(--mobile-font-size-h1);
-        line-height: 4rem;
+        font-size: 45px;
+        line-height: 3.8rem;
     }
 
     .home-main-text .home-main-text_titulo h4 {
-        font-size: var(--mobile-font-size-h4);
+        font-size: 25px;
     }
   }
 
@@ -357,7 +372,9 @@ a {
         font-size: var(--tablet-font-size-h1);
         line-height: 6rem;
     }
-
+    .home-main-text .home-main-text_titulo h4 {
+      font-size: var(--tablet-font-size-h4);
+    }
   }
 
 
@@ -544,18 +561,31 @@ a {
     color: var(--color-orange);
 }
 
-
   /* VERSIÓN MÓVIL */
 
-  @media (min-width:200px) and (max-width:1024px) {
+  @media (min-width:200px) and (max-width:800px) {
 
     .home-text-right {
         text-align: start;
+        padding: 2rem;
         margin: 1rem;
     }
     .home-text-right h4{
-        font-size: var(--mobile-font-size-h4);
+        font-size: 25px;
     }
+}
+
+@media (min-width:800px) and (max-width:1100px) {
+
+  .home-text-right {
+      text-align: start;
+      padding: 2rem;
+      margin: 1rem;
+  }
+  .home-text-right h4{
+      font-size: var(--tablet-font-size-h4);
+      padding: 3rem;
+  }
 }
 
 
@@ -620,7 +650,7 @@ a {
 
     /* VERSIÓN MÓVIL y TABLET */ 
 
-    @media (min-width:200px) and (max-width:1100px) {
+    @media (min-width:200px) and (max-width:700px) {
 
         .container-services-home {
             max-width: 90vw;
@@ -631,18 +661,30 @@ a {
             margin: 5rem 2rem;
             text-align: center;
         }
+
+        .container-services-home_text h3 {
+          margin-top: 4rem;
+          font-size: var(--mobile-font-size-h3);
+        }
+      
     }    
 
-    /* VERSIÓN MÓVIL */
+    /* VERSIÓN TABLET */
 
-    @media (min-width:200px) and (max-width:1024px) {
+    @media (min-width:700px) and (max-width:1024px) {
 
         .home-text-center {
             margin: 10rem 3rem 10rem 3rem;
         }
         .home-text-center h2 {
-            font-size: var(--h3-font-size);
+            font-size: var(--tablet-font-size-h2);
         }
+
+        .container-services-home_text h3 {
+          margin-top: 4rem;
+          font-size: 60px;
+        }
+
     }
 
 
@@ -797,6 +839,13 @@ a {
 
 /* VERSIÓN MÓVIL */
 
+@media (min-width:200px) and (max-width:700px) {
+  .container-info-home_blocks_column .info-home_block h4 {
+    font-size: 30px;
+  }
+  
+}
+
 @media (min-width:200px) and (max-width:1240px) {
 
     .container-info-home {
@@ -808,9 +857,7 @@ a {
     .container-info-home .container-info-home_blocks_row {
         margin: 2rem 1rem;
     }
-
 }
-
 
 
 
@@ -1523,6 +1570,13 @@ a {
 
 
  
+
+
+
+
+
+
+
 
 
 

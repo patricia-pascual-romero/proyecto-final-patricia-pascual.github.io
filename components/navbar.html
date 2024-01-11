@@ -1,9 +1,8 @@
-<!-- Barra de navegación -->
+<!-- Barra de navegación 
 <header>    
     <nav class="nav-bar">
         <div class="nav-bar_logo">
             <a class="logo" href="../index.html"><img loading="lazy" src="../assets/img/logo.svg" alt="logo"></a> 
-            
         </div>
         <div class="nav-bar_links">
             <a class="none a-nav" href="../proyectos.html">Proyectos</a>
@@ -12,5 +11,56 @@
             <a class="bar_btn" href="#">Contáctanos</a>
             <a class="menu_btn" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: #FE7122;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg></a>
         </div>
+
     </nav>
 </header>
+
+-->
+
+<!-- Barra de Navegación / Menú -->
+<header>
+  <nav>
+     <!-- Menú para pantalla mediana/grande-->
+    <section class="menu1">
+        <div class="menu1_logo"> <!-- Logo -->
+            <a class="logo" href="../index.html"><img loading="lazy" src="../assets/img/logo.svg" alt="logo"></a> 
+        </div>  
+        <div class="menu1_links"> <!-- Lista de links -->
+            <a class="menu1_links_a" href="proyectos.html">Proyectos</a>
+            <a class="menu1_links_a" href="nosotros.html">Nosotros</a>
+            <a class="menu1_links_a" href="servicios.html">Servicios</a>
+            <a class="menu1_links_a contact" href="contacto.html">Contáctanos</a>
+        </div>
+    </section>
+
+    <!-- Menú para pantallas pequeñas (responsive)-->
+    <section class="menu1--mobile"> 
+        <!-- Logo -->
+        <a class="logo" href="../index.html"><img src="../assets/img/logo.svg" alt="logo"></a>  
+
+        <!-- Botón para el menú desplegable contado a una función de JS para poder abirlo -->
+        <button id="menuButton" class="button--menu" onclick="openMenu()"> 
+            <!-- Icono del menú-->
+            <svg class="button--menu_icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" style="fill: #FE7122;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
+        </button>
+      
+      <!-- Lista de links del menú desplegable -->
+      <div class="menu--ov activeMenu"> 
+        <div class="menu--info">
+        <!-- Botón para cerrar el menú desplegable (conetcado con una función de JS) -->
+            <button class="menu--info_mobile_close" onclick="closeMenu()">x</button>
+            <a class="menu--info_mobile" href="index.html">Inicio</a>
+            <a class="menu--info_mobile" href="proyectos.html">Proyectos</a>
+            <a class="menu--info_mobile" href="nosotros.html">Nosotros</a>
+            <a class="menu--info_mobile" href="servicios.html">Servicios</a>
+            <a class="menu--info_mobile" href="contactanos.html">Contáctanos</a>
+        </div>
+      </div>
+    </section>
+  </nav>
+</header>
+
+
+
+
+
