@@ -192,128 +192,174 @@ a {
 
 /*                   Página HOME                         */
 
+    /* Barra de navegación / NAVBAR */
 
-    /* NAVBAR RESPONSIVE */
-
-    .menu1 { /* Menu normal de pantallas medianas/grandes */
-      min-width: 95vw;
-      padding: 3rem 2rem;
+    header {
+      min-width: 100vw;
+      height: 10vh;
+      padding: 1rem 3rem;
       margin: auto;
-          
+  
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: var(--color-black);
+  
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: nowrap;
-    
-      background-color: var(--color-black);
-      
-      z-index: 1000; /* Ponemos un nº alto para indicar la posición del eje z y que siempre quede por encima la barra de navegación */
-      position: fixed; /* Para que la barra de navegación se queda fija cuando hacemos scroll*/
-      top: 0;          /* Posicionamos en la parte superior la navbar */
-    }
-
-    .menu1_links { /* Contenedor links del menu */
-      gap: 2rem; 
-    }
-
-    .menu1_links_a {  /* Links del menu */
-      color: var(--color-white);
-      padding: var(--btn-padding);
-      transition: 0.3s ease-in-out;
-    }
-
-    .menu1_links_a:hover {
-      color:  var(--color-orange);
-      padding: 1.1rem 3rem;
-    }
-
-    .menu1_logo .logo img{  /* Logo del menu */
+      z-index: 100; /* Ponemos un nº alto para indicar la posición del eje z y que siempre quede por encima la barra de navegación */
+  }
+  
+  .logo {
+      position: relative;
       width: 30%;
-    }
-
-    .menu1_links .contact { /* Botón círculo "Contact" del menu */
+  }
+  
+  .navbar {
+      position: relative;
+  }
+  
+  .navbar a {
+      font-size: 1.5rem;
+      color: rgb(255, 255, 255);
+      margin: 1rem 2rem; 
+      transition: .3s;
+  }
+  
+  .navbar a:hover{
+      color: var(--color-orange);
+      padding: 1.1rem 1rem;
+  }
+  
+  .navbar a.contacto {
       border: 1px solid var(--color-orange);
       padding: var(--btn-padding);
-      transition: 0.3s ease-in-out;
-    }
-
-    .menu1_links .contact:hover{
+  }
+  
+  .navbar a.contacto:hover {
+      border: 1px solid var(--color-orange);
       background-color: var(--color-orange);
       color: var(--color-black);
-    }
-
-    .menu--ov.activeMenu {
-      display: flex;
-    }
-
-    /* Ocultamos el menú del formato móvil porque estamos en pantallas más grandes */
-    .menu1--mobile { 
-      display: flex;
-    }
-
-    .menu--ov {
-      display: flex;
-    }
-
-
-
-    @media (min-width:250px) and (max-width:1155px) {
-
-    .menu1 { /* Ocultamos el menú de pantallas más grandes */
-      display: none;
-    }
-
-    .menu1--mobile { /* Activamos el menú para pantallas pequeñas+ Estilos */
-      min-height: 50px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 3rem;
-
-      position: fixed;
-      top: 30px; 
-      left: 0;
-      right: 0;
-      z-index: 1000; /* Ponemos un nº alto para indicar la posición del eje z y que siempre quede por encima la barra de navegación */
-    }
-
-    .button--menu { /* Botón que nos permite abrir el menú desplegable */
-      background-color: transparent; /* Para que no se vea el fondo del button (función conectada con JS que hará que se pueda abrir el botón) */
-      border: none;
-    }
-
-    .menu--info { /* Contenedor links menu desplegable (responsive)*/
-      width: 135vw;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      position: relative;
-
-      background-color: var(--color-orange);
-      color: var(--color-black);
-
-      transition: .8s;
-    }
-
-    .menu--info_mobile_close { /* Botón X para cerrar menú responsive */
-      font-size: 2.5rem;
-      position: absolute;
-      color: rgb(137, 137, 137);
-      top: 1rem;
-      right: 1rem;
-    }
-
-    .menu1--mobile .logo img{ /* Tamaño logo */
-      width: 30%;
-    }
   }
 
+  .navbar .inicio {
+    display: none;
+  }
+  
+  #menu-icon {
+      position: relative;
+      font-size: 4rem;
+      cursor: pointer;
+      display: none;
 
+  }
+  
+  @keyframes showRight {
+      100% {
+          width: 0;
+      }
+  }
+  
+  /* VERSIÓN MÓVIL */
+  @media (min-width:200px) and (max-width:1300px) {
+  
+      header {
+          min-width: 100vw;
+          height: 100px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          
+          padding: 1rem 3rem;
+          margin: auto; 
+      }
+      
+      #menu-icon {
+          display: flex;
+      }
+  
+      .navbar {
+          width: 100vw;
+          height: 100vh;
+          position: absolute;
+          overflow: hidden;
+          top: 100px;
+          left: -100%;
+          background-color: var(--color-black);
+          transition: 0.3s ease-in-out;
+      }
+  
+      .navbar.active {
+          transition-delay: 0;
+          left: 0;
+      }
 
+      .logo {
+        position: relative;
+        width: 110px;
+      }
+    
+      .navbar a {
+          overflow: hidden;
+          display: block;
+          font-size: 2em;
+          margin: 0;
+          color: var(--color-white);
+          padding: var(--btn-padding);
+  
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      }
+  
+      .navbar a:hover {
+          color: var(--color-orange);
+      }
+  
+      .navbar a.contacto {
+          border: none;
+      }
+      
+      .navbar a.contacto:hover {
+          border: none;
+          background-color: transparent;
+          color: var(--color-orange);
+      }
+      
+      .navbar .inicio {
+        display: flex;
+      }
+      
+  }
+  
+    /* VERSIÓN TABLET */
+  @media (min-width:700px) and (max-width:1300px) {
+  
+    header {
+      min-width: 100vw;
+      height: 13vh;
+    }
+
+      #menu-icon .icon {
+          width: 100px;
+          height: 100px;
+      }
+
+      .navbar a {
+        font-size: 3em;
+        margin: 3rem; 
+        transition: .3s;
+    }
+    .logo {
+      position: relative;
+      width: 150px;
+    }
+  }
 
 
 
@@ -347,7 +393,7 @@ a {
   @media (min-width:200px) and (max-width: 800px) {
 
     .home-main-text {
-        padding: 8rem 0.2rem 8rem 3rem;
+        padding: 10rem 0.2rem 8rem 3rem;
     }
     
     .home-main-text .home-main-text_titulo h1 {
@@ -365,7 +411,7 @@ a {
   @media (min-width: 800px) and (max-width: 1450px) {
 
     .home-main-text {
-        padding: 10rem 6rem;
+        padding: 15rem 6rem;
     }
 
     .home-main-text .home-main-text_titulo h1 {
@@ -662,6 +708,13 @@ a {
             text-align: center;
         }
 
+        .container-services-home_text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
         .container-services-home_text h3 {
           margin-top: 4rem;
           font-size: var(--mobile-font-size-h3);
@@ -680,11 +733,24 @@ a {
             font-size: var(--tablet-font-size-h2);
         }
 
+        .container-services-home_text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
         .container-services-home_text h3 {
           margin-top: 4rem;
           font-size: 60px;
         }
 
+        .services-home_cards {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
     }
 
 

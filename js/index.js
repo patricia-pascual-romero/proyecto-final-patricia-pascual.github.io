@@ -2,14 +2,27 @@
 
 /* Barra de navegación (se repite en todas las páginas)*/
 
+// Barra de navegación (se repite en todas las páginas)
 fetch('/components/navbar.html')
-.then(response => response.text())
-.then(data => {
-    document.querySelector('header').innerHTML = data;
-})
-.catch
+    .then(response => response.text())
+    .then(data => {
+        document.querySelector('header').innerHTML = data;
 
+        // Luego de cargar la barra de navegación, ejecuta el siguiente bloque de código
+        initNavbar();
+    })
+    .catch(error => console.error('Error fetching navbar:', error));
 
+// Función para inicializar el menú desplegable
+function initNavbar() {
+    let menuIcon = document.querySelector('#menu-icon');
+    let navbar = document.querySelector('.navbar');
+
+    menuIcon.onclick = () => {
+        menuIcon.classList.toggle('disable');
+        navbar.classList.toggle('active');
+    };
+}
 
 
 
@@ -49,26 +62,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// Menu desplegable 
-
-let menu = document.querySelector(".menu1--mobile");
-
-function openMenu() {
-    menu.classList.add("menu--ov");
-  }
-
-function closeMenu() {
-    menu.classList.remove
-}
-  
 
 
-
-
-
-
-
-    
 
 
 
