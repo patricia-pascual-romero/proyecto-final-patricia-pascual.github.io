@@ -281,6 +281,10 @@ a {
       #menu-icon {
           display: flex;
       }
+      #menu-icon .icon {
+        width: 50px;
+        height: 50px;
+    }
   
       .navbar {
           width: 100vw;
@@ -346,8 +350,8 @@ a {
     }
 
       #menu-icon .icon {
-          width: 100px;
-          height: 100px;
+          width: 60px;
+          height: 60px;
       }
 
       .navbar a {
@@ -999,16 +1003,6 @@ a {
   margin: 1rem;
 }
 
-.formulario-home_input {
-  padding: 1rem;
-  margin: 1rem 0;
-  border: none;
-  outline: none;
-}
-
-.formulario-home_input::placeholder {
-  color: var(--color-orange);
-}
 
 .formulario-home_form a {
   border: 1px solid var(--color-orange);
@@ -1180,12 +1174,12 @@ a {
 
   /* VERSIÓN MÓVIL */
 
-  @media (min-width:250px) and (max-width: 1219px) {
+  @media (min-width:250px) and (max-width: 600px) {
     
     .nosotros-main-text {
         text-align: start;
         padding: 1rem;
-        margin: 10rem 2rem 4rem 3rem;
+        margin: 10rem 2rem 3rem 3rem;
     }
 
     .nosotros-main-text .nosotros-main-text_titulo h1 {
@@ -1199,6 +1193,36 @@ a {
         color: var(--color-orange);
     } 
   }
+
+    /* VERSIÓN TABLET */
+
+    @media (min-width:600px) and (max-width: 900px) {
+    
+      .nosotros-main-text {
+        max-width: 100vw;
+        text-align: start;
+        padding: 10rem 5rem 5rem 5rem;
+    }
+    
+      .nosotros-main-text .nosotros-main-text_titulo h1 {
+          font-size: 50px;
+          line-height: 4rem;
+      } 
+    }
+
+    @media (min-width:900px) and (max-width: 1350px) {
+
+      .nosotros-main-text {
+        max-width: 100vw;
+        text-align: start;
+        padding: 10rem 5rem 4rem 5rem;
+    }
+    
+      .nosotros-main-text .nosotros-main-text_titulo h1 {
+          font-size: 70px;
+          line-height: 6rem;
+      } 
+    }
 
 /* Intro "Nosotros" */
 
@@ -1218,7 +1242,6 @@ a {
     color: var(--color-white);
     font-size: var(--p-font-size);
 }
-
 
   /* VERSIÓN MÓVIL */
 
@@ -1242,39 +1265,95 @@ a {
 }
   }
 
+  /* VERSIÓN TABLET */
+
+  @media (min-width:750px) and (max-width: 1219px) {
+    
+    .intro-nosotros {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: start;
+      gap: 2rem;
+      padding: 4rem;
+  }
+  .intro-nosotros h3{
+      color: var(--color-orange);
+      text-align: c;
+      font-size: 40px;
+      text-align: center;
+  }
+  .intro-nosotros p{
+    text-align: start;
+  }
+}
+
 
 /* Presentación EQUIPO */
 
 .equipo-container {
     max-width: 100vw;
+    height: 260vh;
     display: flex;
     flex-direction: column;
     margin: 5rem;
+
+    position: relative; /* Para poder darle el sticky a cada sección */
 }
 
 .department-section {
-    height: 60vh;
+    height: 44vh;
     width: 100%;
-    position: relative;
     border-top: 2px solid var(--color-orange);
     background-color: var(--color-black);
-    overflow: hidden;
-    transition: 0.5s;
+    padding: 0.5rem;
 }
+
+      /* Sticky de cada sección */
+
+    .equipo-container .primero {
+      position: sticky; 
+      top: 100px;
+      z-index: 1;
+    }
+
+    .equipo-container .segundo {
+      position: sticky; 
+      top: 180px;
+      z-index: 2;
+    }
+
+    .equipo-container .tercero {
+      position: sticky; 
+      top: 260px;
+      z-index: 3;
+    }
+
+    .equipo-container .cuarto {
+      position: sticky; 
+      top: 340px;
+      z-index: 4;
+    }
+
+    .equipo-container .quinto {
+      position: sticky; 
+      top: 420px;
+      z-index: 5;
+    }
+
 
 .equipo-container .department-section .department-info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    padding: 0rem 2rem;
 }
 
 .text-content,
 .text-content p,
 .text-content h3 {
-    margin: 0;
-    margin-bottom: 10px;
+    margin: 0 0 1rem 0;
     color: var(--color-orange);
 }
 
@@ -1283,39 +1362,42 @@ a {
 }
 
 .text-content p {
-    margin-bottom: 10rem;
+    margin: 0 0 4rem 0;
 }
+
 .text-content h4 {
     font-size: 20px;
     font-weight: 200;
+    width: 40%;
 }
 
 .text-content h3 {
-    font-size: 50px;
+    font-size: 40px;
 }
 
+.image-content{
+  display: flex;
+  justify-content: end;
+  width: 35vw;
+}
 .image-content img {
-    width: 40%;
+    width: 290px;
     padding: 1rem;
 }
 
-.department-section.recopilado {
-    height: 50px; 
-}
 
   /* VERSIÓN MÓVIL */
 
-  @media (min-width:250px) and (max-width: 1219px) {
+  @media (min-width:250px) and (max-width: 700px) {
+
 
     .equipo-container {
-        max-width: 100vw;
-        display: flex;
-        flex-direction: column;
-        margin: 2rem;
-    }
-    
+      height: 400vh;
+      margin: 2rem;
+  }
+
     .department-section {
-        height: 70vh;
+        height: 80vh;
     }
     
     .equipo-container .department-section .department-info {
@@ -1328,36 +1410,87 @@ a {
     .text-content h2,
     .text-content p,
     .text-content h3 {
-        margin: 0;
-        margin-bottom: 10px;
-        color: var(--color-orange);
+        margin: 0 0 0.8rem 0;
     }
     
     .text-content p {
-        margin-bottom: 4rem;
+        margin: 0 0 3rem 0;
     }
     .text-content h4 {
         font-size: 20px;
         font-weight: 200;
+        width: 100%;
     }
     
     .text-content h3 {
-        font-size: 50px;
+        font-size: 30px;
     }
     
     .image-content img {
-        width: 100%;
-        padding: 1rem;
-        margin: 4rem 0 2rem 0;
+      display: none;
     }
-    
+
+          /* Sticky de cada sección */
+
+          .equipo-container .primero {
+            top: 100px;
+          }
+      
+          .equipo-container .segundo {
+            top: 170px;
+          }
+      
+          .equipo-container .tercero {
+            top: 240px;
+          }
+      
+          .equipo-container .cuarto {
+            top: 305px;
+          }
+      
+          .equipo-container .quinto {
+            top: 380px;
+          }
   }
 
+    /* VERISÓN TABLET */
+    @media (min-width:700px) and (max-width: 1100px) {
 
+          /* Sticky de cada sección */
+
+          .equipo-container .primero {
+            top: 120px;
+          }
+      
+          .equipo-container .segundo {
+            top: 190px;
+          }
+      
+          .equipo-container .tercero {
+            top: 260px;
+          }
+      
+          .equipo-container .cuarto {
+            top: 335px;
+          }
+      
+          .equipo-container .quinto {
+            top: 410px;
+          }
+
+    }
   /* PROYECTOS - Cada uno de ellos al pinchar (Desde la página proyectos) */
 
+    .container-campaingn {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-
+    .container-campaingn img {
+      width: 50%;
+    }
 
 
 
@@ -1881,6 +2014,155 @@ a {
     
     }
 
+
+
+
+
+
+/* PLANES */
+
+.planes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 0 5rem;
+}
+
+.planes h2 {
+  color: var(--color-orange);
+  font-size: 3em;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.planes h3 {
+  font-size: 1.5em;
+}
+
+.planes .planes-todos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  color: var(--color-orange);
+  font-style: normal;
+  font-weight: 400;
+
+  gap: 1rem;
+  max-width: 80%;
+}
+
+.planes .primero, .segundo, .tercero {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.planes img {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 1rem;
+}
+
+.planes-todos .plan .lista1 ul li{
+  text-align: start;
+  margin-left: 3rem;
+  margin-top: 1rem; 
+}
+
+.planes .plan .frase p {
+  text-align: center;
+}
+
+/* Primer bloque */
+
+.planes .primero {
+  border: 1px solid var(--color-orange);
+  color: var(--color-white);
+}
+
+.planes .primero .titulo {
+  flex-flow: row;
+
+  background-color:  var(--color-orange);
+  color:  var(--color-black);
+
+  padding: 3rem;
+  font-size: 1.25rem;
+  line-height: normal;
+  text-align: center;
+}
+.planes .primero .lista1 {
+  padding: 3rem;
+}
+
+.planes .primero .frase {
+  padding: 2.6rem;
+}
+
+
+/* Segundo bloque */
+
+.planes .segundo {
+  border: 1px solid var(--color-orange);
+  color: var(--color-white);
+                  
+  transform: translateY(-2rem);
+}
+
+.planes .segundo .titulo {
+  flex-flow: row;
+  background-color: var(--color-orange);
+  color: var(--color-black);
+  
+  padding: 3rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+
+.planes .segundo .lista1 {
+  padding: 3rem;
+}
+
+.planes .segundo .frase {
+  padding: 2.6rem;
+}
+
+/* Tercer bloque */
+
+.planes .tercero {
+  border: 1px solid var(--color-orange);
+  color: var(--color-white);
+}
+
+.planes .tercero .titulo {
+  flex-flow: row;
+  background-color: var(--color-orange);
+  color: var(--color-black);
+  
+  padding: 3rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.planes .tercero .lista1 {
+  padding: 3rem;
+}
+
+.planes .tercero .frase {
+  padding: 2.6rem;
+}
+
+ /* Versión móvil  */
+
+@media (min-width:320px) and (max-width: 977px) {
+  .planes .segundo {
+      transform: none;
+  }
+}
+
   
 
 
@@ -1948,6 +2230,13 @@ a {
       transition: 0.3s ease;
     }
 
+    .footer_right_row .footer_right_rrss {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: start;
+    }
+
     /* Solo se aplicará el hover a los que lleven enlace */
     .footer_right .row a:hover {
       color: var(--color-white);
@@ -1959,7 +2248,7 @@ a {
 
     /* VERSIÓN MÓVIL */
 
-    @media (min-width:200px) and (max-width: 800px) {
+    @media (min-width:200px) and (max-width: 600px) {
 
       /* Contenedor */
       .footer {
@@ -2012,12 +2301,43 @@ a {
       .footer_right_rrss .svg {
         margin: 2rem 0;
       }
-
-
+      
     }
 
-    @media (min-width:700px) and (max-width: 1200px) {
+        /* VERSIÓN TABLET */
+        
+    @media (min-width:600px) and (max-width: 1200px) {
 
+            /* Contenedor */
+            .footer {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 4rem;
+            }
+      
+            /* Bloque de la izquierda */
+            .footer_left {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: end;
+              margin: 0 0 5rem 0;
+            }
+      
+            .footer_left img {
+              width: 30%;
+            }
+      
+            /* Bloque de la derecha */
+            .footer_right {
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                align-items: start;
+                gap: 3rem;
+            }
     
     }
 
@@ -2027,8 +2347,65 @@ a {
 
  
 
+/*      Página Contactános       */
+ 
+/* FORMULARIO */
 
+.contenedor-formulario {
+  max-width: 100vw;
+  margin: 8rem 5rem;
+  padding: 5rem;
 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.contenedor-formulario_text {
+  width: 50%;
+  color: var(--color-white);
+}
+
+.contenedor-formulario_text h3{
+  width: 40%;
+  color: var(--color-orange);
+  font-size: 40px;
+  display: flex;
+  margin: 0 0 1rem 0;
+}
+
+.contenedor-formulario_text_firstp {
+  margin: 0 0 10rem 0;
+}
+
+.contenedor-formulario_form form{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.form-input {  /* La misma clase también para el formulario del final de la HOME */
+  height: auto;
+  min-height: 2.75rem;
+  border-style: none none solid;
+  border-width: 1px;
+  border-color: var(--color-orange);
+  color: var(--color-white);
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  margin: 1rem;
+  width: 100%;
+}
+
+.textarea {
+  border: 1px solid var(--color-orange);
+  border-radius: 1rem;
+}
 
 
 
