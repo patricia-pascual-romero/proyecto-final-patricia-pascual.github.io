@@ -30,11 +30,14 @@
     
     body {
     line-height: 1;
-    background-color: var(--sec-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-black);
     color: var(--main-color);
     
     line-height: 1.5;
+
+    /*cursor: url('../assets/img/cursor.svg'), auto; 
+                                /*Aparecerá un icono como cursor. 
+                                PROBLEMA! Cuando paso por una img o link no aparece */
     }
     
     ol, ul {
@@ -83,7 +86,7 @@
   :root {
 
     /* Colores */
-    --color-black: #0b0b0b;
+    --color-black: #000000;
     --color-white:  #FFFFFF; 
     --color-orange:  #FE7122;
 
@@ -143,13 +146,6 @@
   }
 
 /* Estilos generales que queremos que se apliquen por defecto en la web y evitarnos repetirlos muchas veces */
-
-body {
-    background-color: var(--color-black);
-    /*cursor: url('../assets/img/cursor.svg'), auto; 
-                                /*Aparecerá un icono como cursor. 
-                                PROBLEMA! Cuando paso por una img o link no aparece */
-}
 
 
 h1 {
@@ -482,9 +478,6 @@ a {
 
 
 
-
-
-
   /* Carrousel marcas - Home 
 
 .container-marcas {
@@ -743,6 +736,7 @@ a {
     padding: 1rem;
     transition: 0.3s ease-in-out;
   }
+
   .services-home_cards:hover {
     background-color: var(--color-orange);
     color: var(--color-black);
@@ -753,6 +747,7 @@ a {
   
   .container-services-home_cards h4 {
     margin: 3rem 2rem;
+    font-family: var(--font-family-h3);
   }
 
   .container-services-home_cards p {
@@ -1671,8 +1666,8 @@ a {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 6rem;
-    margin: 5rem;
+    padding: 6rem 6rem 4rem 6rem;
+    margin: 5rem 5rem 2rem 5rem;
     color: var(--color-orange);
   }
 
@@ -1721,9 +1716,6 @@ a {
           }
     }
 
-
-
-
   /* BOXES */
 
   .container-boxes {
@@ -1731,86 +1723,95 @@ a {
     flex-direction: row;
     justify-content:space-around;
     align-items: center;
-    flex-wrap: wrap;
     color: var(--color-orange);
-    gap: 2rem;
-  }
+    margin: 0 10rem;
 
-  .container-text{
-    padding: 2rem;
   }
 
   .boxes  {
     display: flex;
     flex-direction: row;
+    gap: 1rem;
   }
 
   .boxes .box {
-    border: 1px solid var(--color-orange);
-    padding: 15rem 10rem;
+    width: 500px;
+    height: 300px;
     border-radius: 2rem;
-    margin: 1rem;
-    transition: 0.3s ease-in-out;
-  }
+    margin: 1rem 0;
 
+    object-fit: cover;
+    overflow: hidden;
+    transition: .3s ease-in-out;
+  }
   .boxes .box:hover {
-    padding: 15rem 15rem;
+    width: 600px;
+    height: 300px;
   }
 
+      /* VERSIÓN MÓVIL */
 
-    /* VERSIÓN MÓVIL */
-
-      @media (min-width:250px) and (max-width: 750px) {
+      @media (min-width:250px) and (max-width: 930px) {
 
         .container-boxes {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-          }
+          display: flex;
+          flex-direction: column;
+          justify-content:center;
+          align-items: center;
+          margin: 0rem;
+        }
+      
+        .boxes  {
+          display: flex;
+          flex-direction: column;
+        }
+      
+        .boxes .box {
+          width: 100%;
+          height: 100%;
+          border-radius: 0rem;
+          margin: 0;
+          padding: 0;
+      
+          object-fit: cover;
+          overflow: hidden;
+          transition: .3s ease-in-out;
+        }
+        .boxes .box:hover {
+          width: 110%;
+          height: 110%;
+        }
+      }
 
-          .boxes  {
-            display: flex;
-            flex-direction: column;
-          }
-        
-          .boxes .box {
-   
-            padding: 8rem 10rem;
-            transition: 0.3s ease-in-out;
-          }
-        
-          .boxes .box:hover {
-            padding: 10rem 10rem;
-          }
-   }
+      /* VERSIÓN TABLET grande - Ordenador */
 
-    /* VERSIÓN TABLET */
+      @media (min-width:930px) and (max-width: 1200px) {
 
-    @media (min-width:950px) and (max-width: 1300px) {
-        
-          .boxes .box {
-            padding: 11rem 8rem;
-            margin: 0.5rem;
-          }
-        
-          .boxes .box:hover {
-            padding: 11rem 10rem;
-          }
-    }
+        .boxes .box {
+          width: 300px;
+          height: 200px;
+        }
 
-    @media (min-width:750px) and (max-width: 950px) {
+        .boxes .box:hover {
+          width: 400px;
+          height: 200px;
+        }
+      }
 
-          .boxes .box {
-            padding: 9rem 6rem;
-            margin: 0.5rem;
-          }
-        
-          .boxes .box:hover {
-            padding: 9rem 8rem;
-          }
-    }
+      /* VERSIÓN TABLET */
+
+      @media (min-width:1200px) and (max-width: 1530px) {
+
+        .boxes .box {
+          width: 400px;
+          height: 200px;
+        }
+
+        .boxes .box:hover {
+          width: 500px;
+          height: 200px;
+        }
+      }
 
 
 
@@ -2175,19 +2176,7 @@ a {
 
   .carrousel-services .carrousel-services_puntos .punto.activo {
     background-color: var(--color-orange);
-
   }
-
-
-    /* VERSIÓN MÓVIL */
-
-    @media (min-width:200px) and (max-width: 800px) {
-
-    
-    }
-
-
-
 
 
 
