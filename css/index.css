@@ -393,7 +393,7 @@ a {
   @media (min-width:200px) and (max-width: 900px) {
 
     .home-main-text {
-        padding: 10rem 0.2rem 8rem 3rem;
+        padding: 10rem 0.2rem 4rem 3rem;
         margin: 0;
     }
     
@@ -424,147 +424,65 @@ a {
     }
   }
 
- 
 
-  /* CONTAINER MARCAS  */
+/* SLIDER MARCAS - HOME */ 
 
-  .container-marcas {
-    max-width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .container-marcas img {
-    margin: 0 6rem 0 0;
-    width: 10%;
-  }
-
-
-
-
-  /*
-  .carousel-container {
-    width: 100%;
-    overflow: hidden;
+.slider {
+  width: 100vw;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
 }
 
-  .carousel {
-      display: flex;
-      animation: scroll 10s linear infinite;
+.slider .slider-track {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+   /* Ajustamos la duración de la animación para que termine después de que los logotipos se desplacen completamente fuera del área visible */
+  animation: scroll 30s linear infinite;
+  -webkit-animation: scroll 30s linear infinite;
+  width: calc(200px * 21); /* Ajustamos el ancho del track para acomodar logotipos duplicados */
+}
+
+.slider .slide {
+  width: 200px;
+  margin: 0 5rem 0 0;
+}
+
+.slider .slide picture {
+  width: 100%;
+}
+
+@keyframes scroll { /* Ponemos "scroll" para indicarle qué queremos que se anime */
+  0% {
+    transform: translateX(2000px);
   }
-
-  .carousel-item {
-      min-width: 100%;
-      text-align: center;
-      padding: 1rem;
-      border: 1px solid var(--color-orange);
-      color: var(--color-orange);
+  100% {
+    transform: translateX(calc(-200px * 14));
   }
+}
 
+/* VERSIÓN MÓVIL */
+@media (min-width:200px) and (max-width:1024px) {
 
-@keyframes scroll {
+  @keyframes scroll { /* Ponemos "scroll" para indicarle qué queremos que se anime */
     0% {
-        transform: translateX(0);
+      transform: translateX(800px);
     }
     100% {
-        transform: translateX(-100%);
+      transform: translateX(calc(-200px * 14));
     }
+  }
+
 }
 
-*/
 
 
 
 
-  /* Carrousel marcas - Home 
-
-.container-marcas {
-    max-width: 100vw;
-    height: 18vh;
-    position: relative;
-    overflow: hidden;
-}
-
-.marcas {
-    margin-top: 1.5rem;
-    width: 130px;
-    height: 130px;
-    position: absolute;
-    animation: moveRightToLeft 16s linear infinite;
-}
-
-.marcas:nth-child(2) {
-    margin-left: 20rem; 
-}
-
-.marcas:nth-child(3) {
-    margin-left: 40rem;
-}
-
-.marcas:nth-child(4) {
-    margin-left: 60rem; 
-}
-
-.marcas:nth-child(5) {
-    margin-left: 80rem; 
-}
-
-.marcas:nth-child(6) {
-    margin-left: 100rem; 
-}
-
-.marcas:nth-child(7) {
-    margin-left: 120rem; 
-}
-
-@keyframes moveRightToLeft {
-    0% {
-        transform: translateX(100vw);
-    }
-    100% {
-        transform: translateX(-1700px);
-    }
-}
-
-*/
 
 
-/* VERSIÓN MÓVIL 
-@media (min-width:200px) and (max-width: 1219px) {
-
-    .marcas:nth-child(2) {
-        margin-left: 10rem;
-    }
-
-    .marcas:nth-child(3) {
-        margin-left: 20rem;
-    }
-    .marcas:nth-child(4) {
-        margin-left: 30rem; 
-    }
-    .marcas:nth-child(5) {
-        margin-left: 40rem; 
-    }
-    .marcas:nth-child(6) {
-        margin-left: 50rem; 
-    }
-    .marcas:nth-child(7) {
-        margin-left: 6rem; 
-    }
-
-    @keyframes moveRightToLeft {
-        0% {
-            transform: translateX(100vw);
-        }
-        100% {
-            transform: translateX(-230vw);
-        }
-    } 
-}
-
-*/
 
 
 
@@ -964,7 +882,7 @@ a {
           
           /* Efecto hover para mostrar la línea */
           .container-info-home_blocks_column .info-home_block p.subrayado:hover::before {
-            width: 208px; /* Mostrar la línea al 100% de ancho de la palabra, en px para que no se distorsione en distintas pantallas*/
+            width: 223px; /* Mostrar la línea al 100% de ancho de la palabra, en px para que no se distorsione en distintas pantallas*/
           }
 
 
@@ -1065,7 +983,7 @@ a {
 .container-projects-main {
     max-width: 100vw;
     text-align: start;
-    padding: 15rem 10rem;
+    padding: 15rem 10rem 4rem 10rem;
 }
 
 .container-projects-main .container-projects-main_title h1 {
@@ -1818,13 +1736,21 @@ a {
 
   /* Sección QUÉ HACEMOS */
 
-  .container-quehacemos {
+  .container-quehacemos { /* Contenedor de los 2 bloques */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 1rem;
+    padding: 3rem;
+    margin: 5rem 0;
   }
+
+  .container-quehacemos_text {
+    position: relative;
+    width: 35%;
+  }
+
+        /* Estilos textos */
 
   .container-quehacemos_text h3{
     color: var(--color-orange);
@@ -1833,17 +1759,13 @@ a {
     color: var(--color-white);
     padding: 2rem 0;
   }
-
-  .container-quehacemos_text {
-    position: relative;
-  }
-
   .container-quehacemos_text a {
     text-decoration: none;
     color: var(--color-orange);
   }
 
-  .container-quehacemos_text a::before { /* Subrayado enlace */
+      /* Subrayado enlace (Contenedor de la izquierda "Qué hacemos") */
+  .container-quehacemos_text a::before { 
     content: '';
     position: absolute;
     bottom: 0; /* Distancia linea-plabra*/
@@ -1857,26 +1779,17 @@ a {
   }
 
   .container-quehacemos_text a:hover{ /* Subrayado enlace */
-        color: #ff9e65;
+    color: #ff9e65;
   }
   .container-quehacemos_text a:hover::before {
     background-color: #ff9e65;
   }
 
-  /* Dentro de la sección "Qué hacemos" -- DESPLEGABLE */
+  /* Dentro de la sección "Qué hacemos" -- DESPLEGABLE de preguntas */
 
-  .container-quehacemos {
-    padding: 3rem;
-    margin: 5rem 0;
-  }
-
-  .container-quehacemos_text {
-    width: 35%;
-  }
-  
   .container-questions {
     margin: 1rem;
-    width: 90%;
+    width: 500px; /* Ancho fijo para que al clickar en la pregunta y activarse no se expanda el ancho - Este fue un fallo que tuve que al tenerlo en % al principio al hacer click se me modificaba el ancho y ocupaba casi toda la pantalla */
   }
   
   .desplegable-items {
@@ -1901,33 +1814,16 @@ a {
     padding: 1rem;
     border-radius: 3px; 
     color:  var(--color-orange);
-    transition: color 0.3s ease-in-out; /* Añadida transición de color */
   }
-
-  .desplegable-items:hover .titulo-desplegable {
-    color: var(--color-white);
-    
-  }
-  
-  .desplegable-items:active .titulo-desplegable {
-    color: var(--color-white);
-    padding: 10px;
-    border-radius: 3px;
-    transition: none; /* Elimina la transición durante el clic activo */
-  }
-
 
   .desplegable-items:active .titulo-desplegable {
-    color: var(--color-white);
-    padding: 10px;
-    border-radius: 3px; 
-    transition: 0.3s;
+    transition: 0.3s ease;
   }
 
   .desplegable-items p {
-    color: var(--color-orange);
+    color: var(--color-white);
   }
-    
+  
   /* Iconos desplegable */
 
   .toggle-icon {
@@ -1967,23 +1863,21 @@ a {
             margin: 2rem;
           }
 
+          .container-quehacemos_text {
+            width: 90%;
+            margin: 1rem 1rem 5rem 1rem;
+          }
+
           .container-quehacemos_text h3{
             font-size: var(--mobile-font-size-h3);
           }
 
-          .container-quehacemos_text {
-            width: 90%;
-          }
-          .container-quehacemos_text {
-            margin: 1rem 1rem 5rem 1rem;
-          }
-        
           .container-quehacemos_text a::before { /* Subrayado enlace */
             content: '';
             position: absolute;
             bottom: 0; /* Distancia linea-plabra*/
             left: 0;
-            width: 230px; /* Ancho de la línea */
+            width: 225px; /* Ancho de la línea */
             height: 2px; /* Altura/grosor de la línea */
             background-color: var(--color-orange); /* Color del subrayado */
             transition: 0.3s ease-in-out;
@@ -1997,7 +1891,9 @@ a {
             margin: 1rem;
             width: 95% auto;
         }
-
+        .container-questions {
+          width: 300px;
+        }
    }
 
     /* VERSIÓN TABLET */
@@ -2022,7 +1918,9 @@ a {
             padding: 3rem;
             margin: 4rem 0;
           }
-
+          .container-questions {
+            width: 500px;
+          }  
     }
 
 
@@ -2041,8 +1939,8 @@ a {
     justify-content: start;
     align-items: start;
     color: var(--color-orange);
-    margin: 5rem;
-    padding: 1rem 1rem 1rem ;
+    margin: 3rem 5rem 5rem 5rem;
+    padding: 1rem;
   }
 
 
@@ -2144,12 +2042,6 @@ a {
     transition: 0.3s ease;
   }
 
-  .carrousel-services .carrousel-services_text h4{
-    color: var(--color-black);
-    font-family: 'Anton', sans-serif;
-    margin: 0 0 1rem 0;
-  }
-
   .carrousel-services .carrousel-services_text p{
     color: var(--color-black);
   }
@@ -2182,12 +2074,14 @@ a {
 
 /* PLANES */
 
+  /* Estilos generales */
+
 .planes {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  padding: 3rem 0 5rem;
+  padding: 3rem 1rem 5rem 1rem;
 }
 
 .planes h2 {
@@ -2205,115 +2099,60 @@ a {
 .planes .planes-todos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-  color: var(--color-orange);
-  font-style: normal;
-  font-weight: 400;
-
   gap: 1rem;
   max-width: 80%;
+  font-family: var(--font-family-p);
 }
 
 .planes .primero, .segundo, .tercero {
   display: flex;
   flex-flow: column wrap;
 }
-
-.planes img {
-  width: 1.6rem;
-  height: 1.6rem;
-  margin: 0 1rem 0 0;
+/* Mismo estilo para el título de los 3 bloques */
+.planes .primero .titulo, .planes .segundo .titulo, .planes .tercero .titulo {
+  background-color: var(--color-orange);
+  color: var(--color-black);
+  padding: 3rem 3rem 1rem 3rem;
+  border-radius: 2rem 2rem 0 0;
+  
+  padding: 3rem 3rem 1rem 3rem;
+  text-align: center;
+  font-size: 1.25rem;
 }
 
-.planes-todos .plan .lista1 ul li{
+/* Mismo estilo para los 3 bloques */
+.planes .primero, .planes .segundo, .planes .tercero {
+  background-color: var(--color-orange);
+  color: var(--color-black);
+  border-radius: 2rem;
+}
+
+/* Mismo estilo para la lista de los 3 bloques */
+.planes-todos .plan .lista1 ul li {
   text-align: center;
   margin: 1rem 0 0 0; 
+  font-size: var(--p-font-size);
+}
+
+.planes .primero .frase, .planes .segundo .frase, .planes .tercero .frase{
+  padding: 2.6rem;
+}
+
+.planes .primero .lista1, .planes .segundo .lista1, .planes .tercero .lista1  {
+  padding: 2rem 3rem 5rem 3rem;
 }
 
 .planes .plan .frase p {
   text-align: center;
 }
 
-/* Primer bloque */
 
-.planes .primero {
-  border: 1px solid var(--color-orange);
-  color: var(--color-white);
+/* Segundo bloque - Está posicionado más arriba que los demás en el eje Y */
+
+.planes .segundo {        
+  transform: translateY(-2rem); /* Así lo subimos */
 }
 
-.planes .primero .titulo {
-  flex-flow: row;
-
-  background-color:  var(--color-orange);
-  color:  var(--color-black);
-
-  padding: 3rem;
-  font-size: 1.25rem;
-  line-height: normal;
-  text-align: center;
-}
-.planes .primero .lista1 {
-  padding: 3rem;
-}
-
-.planes .primero .frase {
-  padding: 2.6rem;
-}
-
-
-/* Segundo bloque */
-
-.planes .segundo {
-  border: 1px solid var(--color-orange);
-  color: var(--color-white);
-                  
-  transform: translateY(-2rem);
-}
-
-.planes .segundo .titulo {
-  flex-flow: row;
-  background-color: var(--color-orange);
-  color: var(--color-black);
-  
-  padding: 3rem;
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-
-
-.planes .segundo .lista1 {
-  padding: 3rem;
-}
-
-.planes .segundo .frase {
-  padding: 2.6rem;
-}
-
-/* Tercer bloque */
-
-.planes .tercero {
-  border: 1px solid var(--color-orange);
-  color: var(--color-white);
-}
-
-.planes .tercero .titulo {
-  flex-flow: row;
-  background-color: var(--color-orange);
-  color: var(--color-black);
-  
-  padding: 3rem;
-  text-align: center;
-  font-size: 1.25rem;
-}
-
-.planes .tercero .lista1 {
-  padding: 3rem;
-}
-
-.planes .tercero .frase {
-  padding: 2.6rem;
-}
 
  /* Versión móvil  */
 
@@ -2322,21 +2161,6 @@ a {
       transform: none;
   }
 }
-
-  
-
-
- 
-
-
-
-
-
-
-
-
-
-
 
 
 
