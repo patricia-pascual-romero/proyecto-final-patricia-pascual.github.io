@@ -2,78 +2,41 @@
 
 // Barra de navegación (Fetch para que se repita en todas las páginas de la web)
 
-fetch('/components/navbar.html')
-    .then(response => response.text())
-    .then(data => {
-        document.querySelector('header').innerHTML = data;
+// Utilizamos Fetch para obtener el contenido del archivo 'navbar.html' desde la carpeta '../components/navbar.html'
+fetch('../components/navbar.html') // Le digo dónde se encuentra el elemento que quiero repetir
 
-        // Luego de cargar la barra de navegación, ejecuta el siguiente bloque de código
+    .then(response => response.text()) // El método 'then' se encadena para manejar la respuesta de la solicitud fetch convirtiéndola a texto
+    .then(data => {  // Otro 'then' maneja los datos obtenidos (el contenido del archivo HTML)
+        document.querySelector('header').innerHTML = data; //Le digo "quiero que en todas las etiquetas 'header' añadas esto"
+
+        // Después de cargar la barra de navegación, ejecuta el siguiente bloque de código
         initNavbar(); //Llamamos a la función para que se ejecute 
     })
     .catch
 
 
-// Función para inicializar el menú desplegable
-function initNavbar() {
-    let menuIcon = document.querySelector('#menu-icon');
-    let navbar = document.querySelector('.navbar');
+// Footer - Lo repetimos en todas las páginas de nuestra web (igual que lo anterior)
 
-    menuIcon.onclick = () => {
-        menuIcon.classList.toggle('disable');
-        navbar.classList.toggle('active');
-    };
-}
-
-// Footer - Lo repetimos en todas las páginas de nuestra web
-
-fetch('/components/footer.html')
-    .then(response => response.text())
-    .then(data => {
-        document.querySelector('footer').innerHTML = data;
+// Utilizamos Fetch para obtener el contenido del archivo 'footer.html' desde la carpeta '../components/footer.html'
+fetch('../components/footer.html')
+    .then(response => response.text()) // El método 'then' se encadena para manejar la respuesta de la solicitud fetch convirtiéndola a texto
+    .then(data => { // Otro 'then' maneja los datos obtenidos (el contenido del archivo HTML)
+        document.querySelector('footer').innerHTML = data; // Actualiza el contenido del elemento 'footer' en la página con el contenido del archivo HTML
     })
     .catch
 
 
+// Función para inicializar el menú desplegable (navbar)
+function initNavbar() { 
+    let menuIcon = document.querySelector('#menu-icon'); // Selecciona el elemento con el ID 'menu-icon' y lo almacena en la variable 'menuIcon'
+    let navbar = document.querySelector('.navbar'); // Selecciona el elemento con la clase 'navbar' y lo almacena en la variable 'navbar'
 
-
-
-
-
-// Página Nosotros - Sección EQUIPO (Recopilar los departamentos según se hace scroll)
-
-
-/* Solucionar!! Que se quede pegado más abajo sin que lo tape la barra de navegación (y sin que de problemas porque al cambiar el sticky en px va raro) */
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Variable - Conectar con la sección "departament-section" en HTMl
-    let sections = document.querySelectorAll(".department-section");
-
-    // Cuando hacemos scroll 
-    window.addEventListener("scroll", function() {
-        // Obtener la posición de desplazamiento actual
-        let scrollPosition = window.scrollY;
-
-        // Para cada sección en la página
-        sections.forEach(section => {
-            // Obtener la posición superior e inferior de la sección
-            let sectionTop = section.offsetTop;
-            let sectionBottom = sectionTop + section.offsetHeight;
-
-            // Verificar si la posición de desplazamiento está dentro de los límites de la sección
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                // Si es así, hacer que la sección se quede pegada en la parte superior de la pantalla
-                section.style.position = "sticky";
-                section.style.top = "0"; // Pegada en la parte superior
-            } else {
-                // Si no, volver a la posición normal (relativa)
-                section.style.position = "relative";
-            }
-        });
-    });
-});
-
-
-
+    // Asigna un evento de clic a 'menuIcon' que ejecutará la siguiente función cuando se haga clic
+    menuIcon.onclick = () => { 
+        menuIcon.classList.toggle('disable'); // Alterna la clase 'disable' en 'menuIcon', es decir, la agrega si no está presente y la elimina si ya está presente
+        navbar.classList.toggle('active'); // Alterna la clase 'active' en 'navbar', es decir, la agrega si no está presente y la elimina si ya está presente
+    }
+}
 
 // SECCIÓN "QUE HACEMOS" DE LA PÁG SERVICIOS (Desplegable) 
 
@@ -90,19 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 });
-
-
-
-
-
-
-  
-
-
-
-
-
-
 
 
 // Carrousel imgs
