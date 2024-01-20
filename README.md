@@ -20,19 +20,19 @@ El desarrollo de la página web se llevó a cabo utilizando las siguientes tecno
 
 ## ¿Qué podemos encontrar en la web?
 
-- Servicios: Detalles sobre los servicios ofrecidos, desde branding hasta marketing digital.
-- Exploración Visual: Galerías de imágenes y fotografías de campañas anteriores.
-- Clientes: Información sobre las marcas con las que hemos trabajado.
-- Equipo: Conoce al talentoso equipo que forma parte de la Agencia Indias.
-- Contacto: Encuentra información para conectar con nosotros.
+- **Servicios**: Detalles sobre los servicios ofrecidos, desde branding hasta marketing digital.
+- **Exploración Visual**: Galerías de imágenes y fotografías de campañas anteriores.
+- **Clientes**: Información sobre las marcas con las que hemos trabajado.
+- **Equipo**: Conoce al talentoso equipo que forma parte de la Agencia Indias.
+- **Contacto**: Encuentra información para conectar con nosotros.
 
 ## Secciones de la web
 
-- Proyectos: Las campañas que se han realizado junto con información de cada una de ellas.
-- Nosotros: Presentación del equipo y cómo surge Agencia Indias.
-- Servicios: Todo lo que ofrece la agencia, sus servcios, sus skills y más información.
-- Contacto: Información adicional y formulario para contactar con nosotros. 
+- **Proyectos**: Las campañas que se han realizado junto con información de cada una de ellas.
+- **Nosotros**: Presentación del equipo y cómo surge Agencia Indias.
+- **Servicios**: Todo lo que ofrece la agencia, sus servcios, sus skills y más información.
+- **Contacto**: Información adicional y formulario para contactar con nosotros. 
 
 ## Link de la página web
 
-patriciapascualcei.com 
+**patriciapascualcei.com**
